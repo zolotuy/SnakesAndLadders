@@ -21,7 +21,7 @@ public class GameServiceTest {
     BoardRepository boardRepository;
 
     @Mock
-    DiceyService diceyService;
+    DiceService diceService;
 
     @Test
     public void startNewGameTest() {
@@ -44,7 +44,7 @@ public class GameServiceTest {
         Player player = createPlayer(playerName, 7);
 
         when(boardRepository.findPlayerByName(playerName)).thenReturn(player);
-        when(diceyService.generateDiceValue()).thenReturn(5);
+        when(diceService.generateDiceValue()).thenReturn(5);
 
         Player result = gameService.moveToken(playerName);
 
@@ -63,7 +63,7 @@ public class GameServiceTest {
         Player player = createPlayer(playerName, 99);
 
         when(boardRepository.findPlayerByName(playerName)).thenReturn(player);
-        when(diceyService.generateDiceValue()).thenReturn(4);
+        when(diceService.generateDiceValue()).thenReturn(4);
 
         Player result = gameService.moveToken(playerName);
 
