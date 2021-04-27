@@ -18,7 +18,7 @@ baseUrl/startGame?playerName='yourName'
 ```
 For rolling dice and moving your token 
 ```web
-baseUrl//rollDice/{yourName}
+baseUrl/rollDice/{yourName}
 ```
 
 ## Contributing

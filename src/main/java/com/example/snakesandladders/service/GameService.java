@@ -2,19 +2,21 @@ package com.example.snakesandladders.service;
 
 import com.example.snakesandladders.model.Player;
 import com.example.snakesandladders.storage.BoardRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GameService {
 
-    @Autowired
     private DiceService diceService;
 
-    @Autowired
     private BoardRepository boardRepository;
 
     private static final int LAST_SQUARE = 100;
+
+    public GameService(DiceService diceService, BoardRepository boardRepository) {
+        this.diceService = diceService;
+        this.boardRepository = boardRepository;
+    }
 
     public Player moveToken(String playerName) {
         Player player = boardRepository.findPlayerByName(playerName);
